@@ -1,0 +1,17 @@
+{
+  "name":"Heroku Release",
+  "description": "Test Configuration for per-Pull-Request Reviews Apps on Heroku.",
+  "addons": [
+    {
+      "plan": "heroku-postgresql"
+    }
+  ],
+  "scripts": {
+    "postdeploy": "bundle exec rails heroku:seed"
+  },
+  "buildpacks": [
+    {
+      "url": "heroku/ruby"
+    }
+  ]
+}
